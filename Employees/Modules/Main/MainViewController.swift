@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainViewModelProtocol {
-    func sortEmployees(basedOn: EmployeeSortingType)
+    func sortEmployees(basedOn: Int)
 }
 
 class MainViewController: UIViewController {
@@ -21,23 +21,65 @@ class MainViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar(title: "Employees")
+        setupUI()
         setupTableView()
+        setupNavigationBar(title: Constants.ViewControllerNames.employees)
     }
     
-    func setupNavigationBar(title: String) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.titleView = nil
-        navigationItem.title = title
-        view.setGradientBackground(colors: [Constants.CustomUIColors.sirmaBlue, .white], direction: .bottomToTop)
+    // MARK: - UIPicker
+    private func displaySortingOptions() {
+        var actions: [(String, UIAlertAction.Style)] = []
+        // Appending the sorting options into the ActionSheet
+        viewModel.sortingOptions.forEach( { actions.append(($0.rawValue, UIAlertAction.Style.default)) } )
+        actions.append((Constants.ActionSheetSorter.cancel, UIAlertAction.Style.cancel))
+        
+        Alerts.showActionsheet(viewController: self,
+                               title: Constants.ActionSheetSorter.title,
+                               message: Constants.ActionSheetSorter.message,
+                               actions: actions) { [weak self] selectedIndex in
+            self?.viewModel.sortEmployees(basedOn: selectedIndex)
+        }
     }
     
     // MARK: - Private
+    private func setupUI() {
+        view.setGradientBackground(colors: [Constants.CustomUIColors.sirmaBlue, .white],
+                                   direction: .bottomToTop)
+    }
+    
+    private func setupNavigationBar(title: String) {
+        createSortButton()
+        createImportButton()
+        navigationItem.title = title
+    }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: "\(EmployeeTableViewCell.self)", bundle: .none),
                            forCellReuseIdentifier: "\(EmployeeTableViewCell.self)")
         // Remove tableView separator
         tableView.tableFooterView = UIView()
+    }
+    
+    private func createSortButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sort",
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(didTapSortButton))
+    }
+    
+    private func createImportButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Import",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(didTapImportButton))
+    }
+    
+    @objc private func didTapSortButton() {
+        displaySortingOptions()
+    }
+    
+    @objc private func didTapImportButton() {
+        // TODO: Implement
     }
 
 }

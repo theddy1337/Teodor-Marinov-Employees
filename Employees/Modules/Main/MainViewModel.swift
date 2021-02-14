@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum EmployeeSortingType {
-    case empID
-    case projectID
-    case dateStarted
-    case workedTogether
+enum EmployeeSortingOption: String {
+    case empID = "Employee ID"
+    case projectID = "Project ID"
+    case dateStarted = "Project start date"
+    case workedTogether = "Most time worked together"
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -21,12 +21,19 @@ class MainViewModel: MainViewModelProtocol {
     var numberOfRows: Int { return models.count }
     var models: [Employee] = []
     
+    var sortingOptions: [EmployeeSortingOption] = [
+        .empID,
+        .projectID,
+        .dateStarted,
+        .workedTogether
+    ]
+    
     init() {
         populateEmployeeList()
     }
     
-    func sortEmployees(basedOn: EmployeeSortingType) {
-        // TODO:
+    func sortEmployees(basedOn: Int) {
+        // TODO: Implement
     }
     
     // MARK: - Private

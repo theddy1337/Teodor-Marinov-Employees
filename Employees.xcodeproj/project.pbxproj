@@ -24,6 +24,7 @@
 		9933A77225D5E48B00E5892E /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933A77125D5E48B00E5892E /* Employee.swift */; };
 		9933A77925D5E5E500E5892E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933A77825D5E5E500E5892E /* AppCoordinator.swift */; };
 		993E926725D961A500715A5F /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E926625D961A500715A5F /* DateFormatter+Extensions.swift */; };
+		993E926A25D9778100715A5F /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E926925D9778100715A5F /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9933A77125D5E48B00E5892E /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		9933A77825D5E5E500E5892E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		993E926625D961A500715A5F /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		993E926925D9778100715A5F /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				9907FD0125D9337000BBCEC0 /* Extensions */,
 				9907FCED25D9244800BBCEC0 /* UtilFunctions.swift */,
 				9907FCFA25D927E300BBCEC0 /* Constants.swift */,
+				993E926925D9778100715A5F /* Alerts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				9933A74D25D5D53E00E5892E /* AppDelegate.swift in Sources */,
 				9907FCEE25D9244800BBCEC0 /* UtilFunctions.swift in Sources */,
 				993E926725D961A500715A5F /* DateFormatter+Extensions.swift in Sources */,
+				993E926A25D9778100715A5F /* Alerts.swift in Sources */,
 				9907FCFB25D927E300BBCEC0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
