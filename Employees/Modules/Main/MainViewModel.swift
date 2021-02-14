@@ -16,7 +16,10 @@ enum EmployeeSortingType {
 
 class MainViewModel: MainViewModelProtocol {
     
-    private var employeeList: [Employee] = []
+    // MARK: - Variables
+    var numberOfSections: Int { return 1 }
+    var numberOfRows: Int { return models.count }
+    var models: [Employee] = []
     
     init() {
         populateEmployeeList()
@@ -37,7 +40,7 @@ class MainViewModel: MainViewModelProtocol {
             Employee(empID: 54, projectID: 14, dateFrom: Date.from(year: 2014, month: 1, day: 5), dateTo: nil)
         ]
         
-        employeeList.append(contentsOf: mockEmployeeList)
+        models.append(contentsOf: mockEmployeeList)
     }
 
 }

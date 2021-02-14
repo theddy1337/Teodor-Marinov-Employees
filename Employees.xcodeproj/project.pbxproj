@@ -14,6 +14,8 @@
 		9907FCFB25D927E300BBCEC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907FCFA25D927E300BBCEC0 /* Constants.swift */; };
 		9907FCFF25D92C5800BBCEC0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907FCFE25D92C5800BBCEC0 /* MainViewModel.swift */; };
 		9907FD0325D9337B00BBCEC0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907FD0225D9337B00BBCEC0 /* Date+Extensions.swift */; };
+		9907FD0925D942D400BBCEC0 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907FD0725D942D400BBCEC0 /* EmployeeTableViewCell.swift */; };
+		9907FD0A25D942D400BBCEC0 /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9907FD0825D942D400BBCEC0 /* EmployeeTableViewCell.xib */; };
 		9933A74D25D5D53E00E5892E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933A74C25D5D53E00E5892E /* AppDelegate.swift */; };
 		9933A75125D5D53E00E5892E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933A75025D5D53E00E5892E /* MainViewController.swift */; };
 		9933A75425D5D53E00E5892E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9933A75225D5D53E00E5892E /* Main.storyboard */; };
@@ -21,6 +23,7 @@
 		9933A75925D5D53E00E5892E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9933A75725D5D53E00E5892E /* LaunchScreen.storyboard */; };
 		9933A77225D5E48B00E5892E /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933A77125D5E48B00E5892E /* Employee.swift */; };
 		9933A77925D5E5E500E5892E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933A77825D5E5E500E5892E /* AppCoordinator.swift */; };
+		993E926725D961A500715A5F /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E926625D961A500715A5F /* DateFormatter+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,8 @@
 		9907FCFA25D927E300BBCEC0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9907FCFE25D92C5800BBCEC0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9907FD0225D9337B00BBCEC0 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		9907FD0725D942D400BBCEC0 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		9907FD0825D942D400BBCEC0 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
 		9933A74925D5D53E00E5892E /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9933A74C25D5D53E00E5892E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9933A75025D5D53E00E5892E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +45,7 @@
 		9933A75A25D5D53E00E5892E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9933A77125D5E48B00E5892E /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		9933A77825D5E5E500E5892E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		993E926625D961A500715A5F /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 		9907FCF225D9260400BBCEC0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9907FD0625D942B500BBCEC0 /* EmployeeTableViewCell */,
 				9933A75225D5D53E00E5892E /* Main.storyboard */,
 				9933A75025D5D53E00E5892E /* MainViewController.swift */,
 				9907FCF425D9263500BBCEC0 /* MainCoordinator.swift */,
@@ -86,8 +93,18 @@
 			isa = PBXGroup;
 			children = (
 				9907FD0225D9337B00BBCEC0 /* Date+Extensions.swift */,
+				993E926625D961A500715A5F /* DateFormatter+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9907FD0625D942B500BBCEC0 /* EmployeeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9907FD0725D942D400BBCEC0 /* EmployeeTableViewCell.swift */,
+				9907FD0825D942D400BBCEC0 /* EmployeeTableViewCell.xib */,
+			);
+			path = EmployeeTableViewCell;
 			sourceTree = "<group>";
 		};
 		9933A74025D5D53E00E5892E = {
@@ -197,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9933A75925D5D53E00E5892E /* LaunchScreen.storyboard in Resources */,
+				9907FD0A25D942D400BBCEC0 /* EmployeeTableViewCell.xib in Resources */,
 				9933A75625D5D53E00E5892E /* Assets.xcassets in Resources */,
 				9933A75425D5D53E00E5892E /* Main.storyboard in Resources */,
 			);
@@ -214,11 +232,13 @@
 				9907FCF525D9263500BBCEC0 /* MainCoordinator.swift in Sources */,
 				9933A75125D5D53E00E5892E /* MainViewController.swift in Sources */,
 				9907FCE925D9218100BBCEC0 /* Coordinator.swift in Sources */,
+				9907FD0925D942D400BBCEC0 /* EmployeeTableViewCell.swift in Sources */,
 				9933A77225D5E48B00E5892E /* Employee.swift in Sources */,
 				9907FCFF25D92C5800BBCEC0 /* MainViewModel.swift in Sources */,
 				9907FCF825D9274800BBCEC0 /* StoryboardInstantiatable.swift in Sources */,
 				9933A74D25D5D53E00E5892E /* AppDelegate.swift in Sources */,
 				9907FCEE25D9244800BBCEC0 /* UtilFunctions.swift in Sources */,
+				993E926725D961A500715A5F /* DateFormatter+Extensions.swift in Sources */,
 				9907FCFB25D927E300BBCEC0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

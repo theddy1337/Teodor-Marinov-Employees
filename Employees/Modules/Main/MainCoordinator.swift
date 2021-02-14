@@ -23,6 +23,7 @@ class MainCoordinator: Coordinator {
     // MARK: - Private
     private func showMainScene() {
         guard let mainViewController = MainViewController.instantiateFromStoryboard() else { return }
+        mainViewController.viewModel = MainViewModel()
         navigationController?.pushViewController(mainViewController, animated: true)
     }
 }
