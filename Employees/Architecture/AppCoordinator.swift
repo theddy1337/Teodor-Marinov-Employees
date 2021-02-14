@@ -23,7 +23,13 @@ class AppCoordinator: Coordinator {
     func start() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        showMainModule()
     }
   
+    private func showMainModule() {
+        let mainCoordinator = MainCoordinator(navigationController: navigationController)
+        addChildCoordinator(mainCoordinator)
+        mainCoordinator.start()
+    }
 }
 
