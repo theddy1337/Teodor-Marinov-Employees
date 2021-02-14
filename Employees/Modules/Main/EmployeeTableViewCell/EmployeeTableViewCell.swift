@@ -8,7 +8,7 @@
 import UIKit
 
 protocol Configurable {
-    func configure(with employee: Employee)
+    func configure(with employee: Employee?)
 }
 
 class EmployeeTableViewCell: UITableViewCell, Configurable {
@@ -21,7 +21,9 @@ class EmployeeTableViewCell: UITableViewCell, Configurable {
     
     private let dateFormatter = DateFormatter()
     
-    func configure(with employee: Employee) {
+    func configure(with employee: Employee?) {
+        guard let employee = employee else { return }
+        
         employeeIDLabel.text = "\(employee.empID)"
         projectIDLabel.text = "\(employee.projectID)"
         dateFromLabel.text = dateFormatter.dateToString(employee.dateFrom, dateFormat: .yearMonthDay)

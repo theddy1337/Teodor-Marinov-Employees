@@ -19,6 +19,7 @@ func delay(_ delay: Double, closure: @escaping () -> Void) {
                     execute: closure)
 }
 
+// MARK: - Gradient
 public typealias GradientAnchorPoints = (startAnchor: CGPoint, endAnchor: CGPoint)
 
 public enum GradientDirection {
@@ -95,3 +96,39 @@ public extension CAGradientLayer {
     }
     
 }
+
+
+// MARK: - Observable
+class Observable<T> {
+    
+    typealias Closure = (T?) -> Void
+    
+    private var closure: Closure?
+    
+    var value: T? {
+        didSet {
+            executeClosure(newValue: value)
+        }
+    }
+    
+     // Binds a closure to be executed when the value property of the object is set (changed)
+    func bind(closure: Closure?) {
+        self.closure = closure
+    }
+    
+    // Binds a closure to be executed when the value property of the object is set (changed)
+    // and executes the closure immediately without waiting for the value property to change
+    func bindAndFire(closure: Closure?) {
+        self.closure = closure
+        executeClosure(newValue: value)
+    }
+    
+    func executeClosure(newValue: T?) {
+        closure?(newValue)
+    }
+    
+    init(_ value: T?) {
+        self.value = value
+    }
+}
+

@@ -8,40 +8,54 @@
 import UIKit
 
 protocol MainViewModelProtocol {
-    func sortEmployees(basedOn: Int)
+    var models: Observable<[Employee]> { get }
+    var numberOfSections: Int { get }
+    var numberOfRows: Int { get }
+    var sortingOptions: [EmployeeSortingOption] { get }
+    func sortEmployees(basedOn: EmployeeSortingOption?)
 }
 
 class MainViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var totalTimeWorkedTogetherLabel: UILabel!
+    @IBOutlet private weak var employeesCoupleNamesLabel: UILabel!
     
     // MARK: - Properties
-    var viewModel: MainViewModel!
+    var viewModel: MainViewModelProtocol!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupTableView()
+        bindToEmployees()
         setupNavigationBar(title: Constants.ViewControllerNames.employees)
     }
     
-    // MARK: - UIPicker
+    // MARK: - UIActionSheet
     private func displaySortingOptions() {
         var actions: [(String, UIAlertAction.Style)] = []
-        // Appending the sorting options into the ActionSheet
+        // Creating the sorting options into the ActionSheet
         viewModel.sortingOptions.forEach( { actions.append(($0.rawValue, UIAlertAction.Style.default)) } )
+        // Creating cancel option as well
         actions.append((Constants.ActionSheetSorter.cancel, UIAlertAction.Style.cancel))
         
         Alerts.showActionsheet(viewController: self,
                                title: Constants.ActionSheetSorter.title,
                                message: Constants.ActionSheetSorter.message,
-                               actions: actions) { [weak self] selectedIndex in
-            self?.viewModel.sortEmployees(basedOn: selectedIndex)
+                               actions: actions) { [weak self] employeeSortingOption in
+            self?.viewModel.sortEmployees(basedOn: employeeSortingOption)
         }
     }
     
     // MARK: - Private
+    private func bindToEmployees() {
+        viewModel.models.bind { [weak self] _ in
+            self?.tableView.reloadData()
+        }
+    }
+    
     private func setupUI() {
         view.setGradientBackground(colors: [Constants.CustomUIColors.sirmaBlue, .white],
                                    direction: .bottomToTop)
@@ -101,7 +115,7 @@ extension MainViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(EmployeeTableViewCell.self)")
                 as? EmployeeTableViewCell else { return UITableViewCell() }
         
-        cell.configure(with: viewModel.models[indexPath.row])
+        cell.configure(with: viewModel.models.value?[indexPath.row])
         return cell
     }
 }

@@ -12,13 +12,13 @@ class Alerts {
                                 title: String,
                                 message: String,
                                 actions: [(String, UIAlertAction.Style)],
-                                completion: @escaping (_ index: Int) -> Void) {
+                                completion: @escaping (_ index: EmployeeSortingOption?) -> Void) {
         
         let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        for (index, (title, style)) in actions.enumerated() {
+        for (title, style) in actions {
             let alertAction = UIAlertAction(title: title, style: style) { (_) in
-                completion(index)
+                completion(EmployeeSortingOption(rawValue: title))
             }
             alertViewController.addAction(alertAction)
         }

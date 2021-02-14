@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Employee {
+struct Employee: Equatable {
     var empID: Int
     var projectID: Int
     var dateFrom: Date

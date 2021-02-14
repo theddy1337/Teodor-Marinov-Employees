@@ -27,4 +27,8 @@ struct Constants {
         static let cancel = "Cancel"
     }
     
+    struct Employee {
+        static let statisticsViewHeight: CGFloat = 168
+    }
+    
 }
