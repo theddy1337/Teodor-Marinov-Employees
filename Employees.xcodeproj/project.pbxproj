@@ -25,6 +25,7 @@
 		9933A77925D5E5E500E5892E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933A77825D5E5E500E5892E /* AppCoordinator.swift */; };
 		993E926725D961A500715A5F /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E926625D961A500715A5F /* DateFormatter+Extensions.swift */; };
 		993E926A25D9778100715A5F /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E926925D9778100715A5F /* Alerts.swift */; };
+		993E926D25D9FFD100715A5F /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E926C25D9FFD100715A5F /* Calendar+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		9933A77825D5E5E500E5892E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		993E926625D961A500715A5F /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		993E926925D9778100715A5F /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		993E926C25D9FFD100715A5F /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				9907FD0225D9337B00BBCEC0 /* Date+Extensions.swift */,
 				993E926625D961A500715A5F /* DateFormatter+Extensions.swift */,
+				993E926C25D9FFD100715A5F /* Calendar+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				9933A77925D5E5E500E5892E /* AppCoordinator.swift in Sources */,
 				9907FD0325D9337B00BBCEC0 /* Date+Extensions.swift in Sources */,
+				993E926D25D9FFD100715A5F /* Calendar+Extensions.swift in Sources */,
 				9907FCF525D9263500BBCEC0 /* MainCoordinator.swift in Sources */,
 				9933A75125D5D53E00E5892E /* MainViewController.swift in Sources */,
 				9907FCE925D9218100BBCEC0 /* Coordinator.swift in Sources */,

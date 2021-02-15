@@ -12,6 +12,7 @@ protocol MainViewModelProtocol {
     var numberOfSections: Int { get }
     var numberOfRows: Int { get }
     var sortingOptions: [EmployeeSortingOption] { get }
+    var shouldRefreshStatisticsView: Observable<Bool> { get }
     func sortEmployees(basedOn: EmployeeSortingOption?)
 }
 
@@ -30,6 +31,7 @@ class MainViewController: UIViewController {
         setupUI()
         setupTableView()
         bindToEmployees()
+        bindToStatisticView()
         setupNavigationBar(title: Constants.ViewControllerNames.employees)
     }
     
@@ -50,6 +52,14 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Private
+    private func bindToStatisticView() {
+        viewModel.shouldRefreshStatisticsView.bind { [weak self] _ in
+            self?.totalTimeWorkedTogetherLabel.isHidden = false
+            self?.employeesCoupleNamesLabel.isHidden = false
+            self?.tableView.reloadData()
+        }
+    }
+    
     private func bindToEmployees() {
         viewModel.models.bind { [weak self] _ in
             self?.tableView.reloadData()
@@ -63,7 +73,6 @@ class MainViewController: UIViewController {
     
     private func setupNavigationBar(title: String) {
         createSortButton()
-        createImportButton()
         navigationItem.title = title
     }
     
@@ -81,19 +90,8 @@ class MainViewController: UIViewController {
                                                            action: #selector(didTapSortButton))
     }
     
-    private func createImportButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Import",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(didTapImportButton))
-    }
-    
     @objc private func didTapSortButton() {
         displaySortingOptions()
-    }
-    
-    @objc private func didTapImportButton() {
-        // TODO: Implement
     }
 
 }

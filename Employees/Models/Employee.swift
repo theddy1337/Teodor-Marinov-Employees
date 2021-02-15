@@ -12,4 +12,9 @@ struct Employee: Equatable {
     var projectID: Int
     var dateFrom: Date
     var dateTo: Date?
+    
+    var daysWorkingOnProject: Int {
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.numberOfDaysBetween(dateFrom, and: dateTo ?? Date())
+    }
 }
