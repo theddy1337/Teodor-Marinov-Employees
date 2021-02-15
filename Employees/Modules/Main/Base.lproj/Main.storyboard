@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="Employees" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEQ-pk-Rwh" userLabel="container">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cw-ZL-CZF" userLabel="Employee Statistic Info">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The couple that worked the most time together is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiA-mj-fwt">
+                                                <rect key="frame" x="59" y="16" width="296" height="37.5"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee 6 and Employee 54" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faY-SM-8hX">
+                                                <rect key="frame" x="97.5" y="59.5" width="219.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                <color key="textColor" red="0.47104889150000001" green="0.52124029400000005" blue="0.54118019340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total time worked together:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp2-Yr-oCp">
+                                                <rect key="frame" x="59" y="101" width="260.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2220 days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-lm-n8H">
+                                                <rect key="frame" x="177.5" y="126" width="76" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                <color key="textColor" red="0.47104889150000001" green="0.52124029400000005" blue="0.54118019340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="faY-SM-8hX" firstAttribute="centerX" secondItem="MiA-mj-fwt" secondAttribute="centerX" id="2A4-jP-ern"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dp2-Yr-oCp" secondAttribute="trailing" constant="20" symbolic="YES" id="8yf-ti-agN"/>
+                                            <constraint firstAttribute="trailing" secondItem="MiA-mj-fwt" secondAttribute="trailing" constant="59" id="ED3-5G-IuF"/>
+                                            <constraint firstItem="dp2-Yr-oCp" firstAttribute="leading" secondItem="7Cw-ZL-CZF" secondAttribute="leading" constant="59" id="Hom-95-Os6"/>
+                                            <constraint firstItem="dp2-Yr-oCp" firstAttribute="top" secondItem="faY-SM-8hX" secondAttribute="bottom" constant="25" id="RYA-sM-l0E"/>
+                                            <constraint firstItem="MiA-mj-fwt" firstAttribute="top" secondItem="7Cw-ZL-CZF" secondAttribute="top" constant="16" id="RrR-qf-PSr"/>
+                                            <constraint firstItem="faY-SM-8hX" firstAttribute="top" secondItem="MiA-mj-fwt" secondAttribute="bottom" constant="6" id="V0a-3V-9Dz"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bh5-lm-n8H" secondAttribute="trailing" constant="20" symbolic="YES" id="aBY-UD-UqR"/>
+                                            <constraint firstItem="MiA-mj-fwt" firstAttribute="centerX" secondItem="7Cw-ZL-CZF" secondAttribute="centerX" id="axB-m8-7CS"/>
+                                            <constraint firstItem="bh5-lm-n8H" firstAttribute="top" secondItem="dp2-Yr-oCp" secondAttribute="bottom" constant="6" id="cJv-s4-Rrj"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bh5-lm-n8H" secondAttribute="bottom" constant="5" id="jgk-L6-YTF"/>
+                                            <constraint firstAttribute="height" constant="168" id="lhy-Tv-GPA"/>
+                                            <constraint firstItem="bh5-lm-n8H" firstAttribute="leading" secondItem="7Cw-ZL-CZF" secondAttribute="leading" constant="177.5" id="vpp-Mv-7f7"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tRF-9a-g5e">
+                                        <rect key="frame" x="0.0" y="168" width="414" height="650"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="RU8-XT-3p9"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="lIx-YS-7NF"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7Cw-ZL-CZF" secondAttribute="trailing" id="Eqw-Tf-843"/>
+                                    <constraint firstItem="7Cw-ZL-CZF" firstAttribute="leading" secondItem="wEQ-pk-Rwh" secondAttribute="leading" id="IF2-4Q-Wf3"/>
+                                    <constraint firstAttribute="trailing" secondItem="tRF-9a-g5e" secondAttribute="trailing" id="UGB-Hq-KAf"/>
+                                    <constraint firstItem="7Cw-ZL-CZF" firstAttribute="top" secondItem="wEQ-pk-Rwh" secondAttribute="top" id="WHC-kV-HfT"/>
+                                    <constraint firstItem="tRF-9a-g5e" firstAttribute="top" secondItem="7Cw-ZL-CZF" secondAttribute="bottom" id="eFZ-pM-bTY"/>
+                                    <constraint firstAttribute="bottom" secondItem="tRF-9a-g5e" secondAttribute="bottom" id="kWC-32-jV0"/>
+                                    <constraint firstItem="tRF-9a-g5e" firstAttribute="leading" secondItem="wEQ-pk-Rwh" secondAttribute="leading" id="x4e-aS-fvB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wEQ-pk-Rwh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="50c-0r-dT5"/>
+                            <constraint firstItem="wEQ-pk-Rwh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8I5-S8-scv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wEQ-pk-Rwh" secondAttribute="bottom" id="LgX-Vq-5dl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wEQ-pk-Rwh" secondAttribute="trailing" id="QcR-fz-NoE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="employeesCoupleNamesLabel" destination="faY-SM-8hX" id="tCQ-wU-lLs"/>
+                        <outlet property="tableView" destination="tRF-9a-g5e" id="LOU-EP-Jq0"/>
+                        <outlet property="totalTimeWorkedTogetherLabel" destination="bh5-lm-n8H" id="NY0-4w-k0x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-155.07246376811597" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+</document>
